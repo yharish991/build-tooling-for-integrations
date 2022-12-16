@@ -9,7 +9,7 @@ VERSION ?= v0.0.1
 .PHONY: init
 init: ## Fetch the Dockerfile and pull image needed to build packages
 	docker run --rm -v ${PWD}:/workspace --entrypoint /bin/sh $(BUILD_TOOLING_CONTAINER_IMAGE):$(VERSION) -c "cp Dockerfile /workspace && cp .golangci.yaml /workspace"
-    docker pull $(PACKAGING_CONTAINER_IMAGE):$(VERSION)
+	docker pull $(PACKAGING_CONTAINER_IMAGE):$(VERSION)
 
 .PHONY: all
 all: docker-all package-vendir-sync package-bundle-generate-all package-bundle-push-all ## Run linter, tests, build and publish images and packages
@@ -53,7 +53,7 @@ endif
 
 .PHONY: docker-build
 docker-build: ## Build docker image
-	docker build -t $(IMAGE) -f Dockerfile --build-arg LD_FLAGS="$(LD_FLAGS)" --build-context component=$(COMPONENT) --load .
+	docker build -t $(IMAGE) -f Dockerfile --build-arg LD_FLAGS="$(LD_FLAGS)" --build-arg COMPONENT=$(COMPONENT) --load .
 
 .PHONY: docker-publish
 docker-publish: ## Publish docker image
@@ -63,10 +63,10 @@ docker-publish: ## Publish docker image
 lint: ## Run linting
 ifneq ($(strip $(COMPONENT)),.)
 	cp .golangci.yaml $(COMPONENT)
-	docker build . -f Dockerfile --target lint --build-context component=$(COMPONENT)
+	docker build . -f Dockerfile --target lint --build-arg COMPONENT=$(COMPONENT)
 	rm -rf $(COMPONENT)/.golangci.yaml
 else
-	docker build . -f Dockerfile --target lint --build-context component=$(COMPONENT)
+	docker build . -f Dockerfile --target lint --build-arg COMPONENT=$(COMPONENT)
 endif
 
 .PHONY: fmt
@@ -79,7 +79,7 @@ vet: ## Perform static analysis of code
 
 .PHONY: test
 test: fmt vet ## Run tests
-	docker build . -f Dockerfile --target test --build-context component=$(COMPONENT)
+	docker build . -f Dockerfile --target test --build-arg COMPONENT=$(COMPONENT)
 
 .PHONY: kbld-image-replace
 kbld-image-replace: ## Add newImage in kbld-config.yaml
