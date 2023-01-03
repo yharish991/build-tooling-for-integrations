@@ -3,7 +3,7 @@
 # Copyright 2021 VMware, Inc. All Rights Reserved.
 # SPDX-License-Identifier: Apache-2.0
 
-ARG BUILDER_BASE_IMAGE=golang:1.17
+ARG BUILDER_BASE_IMAGE=golang:1.19
 
 FROM $BUILDER_BASE_IMAGE as base
 WORKDIR /workspace
