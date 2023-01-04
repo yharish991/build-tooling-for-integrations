@@ -1,4 +1,4 @@
-FROM bitnami/golang:1.17
+FROM bitnami/golang:1.19
 
 LABEL org.opencontainers.image.source=https://github.com/vmware-tanzu/build-tooling-for-integrations
 
