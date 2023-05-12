@@ -14,8 +14,8 @@ GOPROXY ?= "https://proxy.golang.org,direct"
 PLATFORM=local
 COMPONENTS ?=
 
-BUILD_TOOLING_CONTAINER_IMAGE ?= ghcr.io/vmware-tanzu/build-tooling
-PACKAGING_CONTAINER_IMAGE ?= ghcr.io/vmware-tanzu/package-tooling
+BUILD_TOOLING_CONTAINER_IMAGE ?= ghcr.io/yharish991/build-tooling
+PACKAGING_CONTAINER_IMAGE ?= ghcr.io/yharish991/package-tooling
 VERSION ?= v0.0.2
 
 CLI_PLUGINS ?= "*"
