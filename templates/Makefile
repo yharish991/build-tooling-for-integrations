@@ -16,7 +16,7 @@ COMPONENTS ?=
 
 BUILD_TOOLING_CONTAINER_IMAGE ?= ghcr.io/yharish991/build-tooling
 PACKAGING_CONTAINER_IMAGE ?= ghcr.io/yharish991/package-tooling
-VERSION ?= v0.1.2
+VERSION ?= v0.1.3
 
 CLI_PLUGINS ?= "*"
 CLI_PLUGIN_VERSION ?= v0.0.1
