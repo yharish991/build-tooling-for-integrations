@@ -1,4 +1,4 @@
-module github.com/vmware-tanzu/build-tooling-for-integrations
+module github.com/yharish991/build-tooling-for-integrations
 
 go 1.19
 

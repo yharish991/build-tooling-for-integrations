@@ -120,9 +120,9 @@ $(COMPONENTS):
 .PHONY: validate-component
 validate-component:
 ifeq ($(strip $(IMAGE_NAME)),)
-	$(error Image name of the component is not set in COMPONENTS variable, check https://github.com/vmware-tanzu/build-tooling-for-integrations/blob/main/docs/build-tooling-getting-started.md#steps-to-use-the-build-tooling for more help)
+	$(error Image name of the component is not set in COMPONENTS variable, check https://github.com/yharish991/build-tooling-for-integrations/blob/main/docs/build-tooling-getting-started.md#steps-to-use-the-build-tooling for more help)
 else ifeq ($(strip $(PACKAGE_PATH)),)
-	$(error Path to the package of the component is not set in COMPONENTS variable, check https://github.com/vmware-tanzu/build-tooling-for-integrations/blob/main/docs/build-tooling-getting-started.md#steps-to-use-the-build-tooling for more help)
+	$(error Path to the package of the component is not set in COMPONENTS variable, check https://github.com/yharish991/build-tooling-for-integrations/blob/main/docs/build-tooling-getting-started.md#steps-to-use-the-build-tooling for more help)
 endif
 
 .PHONY: build-%

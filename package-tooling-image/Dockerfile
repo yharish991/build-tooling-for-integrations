@@ -1,6 +1,6 @@
 FROM golang:1.19
 
-LABEL org.opencontainers.image.source=https://github.com/vmware-tanzu/build-tooling-for-integrations
+LABEL org.opencontainers.image.source=https://github.com/yharish991/build-tooling-for-integrations
 
 ENV DOCKER_CE_VERSION 5:20.10.14~3-0~debian-bullseye
 ENV DOCKER_CE_CLI_VERSION 5:20.10.14~3-0~debian-bullseye
@@ -25,7 +25,7 @@ RUN apt-get update && \
 
 RUN curl -sSL https://get.docker.com/ | sh
 
-RUN go install github.com/vmware-tanzu/build-tooling-for-integrations/package-tools@${PACKAGE_TOOLS_VERSION}
+RUN go install github.com/yharish991/build-tooling-for-integrations/package-tools@${PACKAGE_TOOLS_VERSION}
 
 COPY package-tooling-image/build-packages.sh /build-packages.sh
 ENTRYPOINT ["/build-packages.sh"]

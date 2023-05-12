@@ -1,4 +1,4 @@
-module github.com/vmware-tanzu/build-tooling-for-integrations/examples/multi-module-integration/cmd/plugin/plugin-demo-bar
+module github.com/yharish991/build-tooling-for-integrations/examples/multi-module-integration/cmd/plugin/plugin-demo-bar
 
 go 1.19
 
