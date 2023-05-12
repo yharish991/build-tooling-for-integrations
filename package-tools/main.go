@@ -3,10 +3,8 @@
 
 package main
 
-import "github.com/vmware-tanzu/build-tooling-for-integrations/package-tools/cmd"
+import "github.com/yharish991/build-tooling-for-integrations/package-tools/cmd"
 
 func main() {
 	cmd.Execute()
 }
-
-
