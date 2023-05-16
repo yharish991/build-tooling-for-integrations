@@ -10,7 +10,7 @@ fi
 echo "Stopping and removing any existing local docker registry..."
 docker container stop registry && docker container rm -v registry || true
 echo "Starting local docker registry..."
-docker run -d -p 5000:5000 --name registry registry:2.8
+docker run -d -p 5001:5000 --name registry mirror.gcr.io/library/registry:2.8
 
 cd /workspace/${SRC_PATH}
 
