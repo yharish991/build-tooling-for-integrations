@@ -277,7 +277,7 @@ func generateRepoBundle(projectRootDir string) error {
 			return fmt.Errorf("pushing package bundle to local registry: %s", cmdErr.String())
 		}
 
-		tarBallFileName = packageRepository + "-" + tarballVersion + "-thick.tar.gz"
+		tarBallFileName = packageRepository + "-repo-" + tarballVersion + "-thick.tar.gz"
 		imgpkgCopyCmd := exec.Command(
 			filepath.Join(toolsBinDir, "imgpkg"),
 			"copy",
